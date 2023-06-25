@@ -29,6 +29,7 @@ jobs:
    - name: Install Dependencies and build
      run: |
       echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_PAT }}" >> .npmrc
+      npm version patch
       pnpm install --no-frozen-lockfile
       pnpm build
    - name: Publish
