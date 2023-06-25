@@ -31,6 +31,7 @@ jobs:
       echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PACKAGES_PAT }}" >> .npmrc
       pnpm install --frozen-lockfile
       pnpm build
+      npm version patch
    - name: Publish
      run: pnpm publish --no-git-checks
      env:
